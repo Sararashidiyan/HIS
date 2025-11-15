@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "YourProject.Grpc";
+
+package auth;
+
+service Auth {
+  rpc GenerateToken (TokenRequest) returns (TokenResponse);
+  rpc RefreshToken (RefreshTokenRequest) returns (TokenResponse);
+}
+
+message TokenRequest {
+  string clientId = 1;
+  string clientSecret = 2;
+}
+
+message TokenResponse {
+  string accessToken = 1;
+  string refreshToken=2;
+}
+
+message RefreshTokenRequest {
+  string clientId  = 1;
+  string refreshToken= 2;
+}

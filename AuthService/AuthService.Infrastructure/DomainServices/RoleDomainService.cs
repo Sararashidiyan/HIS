@@ -9,12 +9,18 @@ namespace AuthService.Infrastructure.DomainServices
 {
     public class RoleDomainService : IRoleDomainService
     {
-        public bool IsCurrentRoleHasPermission(int roleId)
+       
+        public Task<bool> IsRoleHasPermission(int roleId)
         {
             throw new NotImplementedException();
         }
 
         public bool IsRoleTitleUnique(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> IsRoleTitleUnique(string title, int? id = null)
         {
             throw new NotImplementedException();
         }
