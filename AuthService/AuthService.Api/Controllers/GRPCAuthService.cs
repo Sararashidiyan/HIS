@@ -1,18 +1,14 @@
 ﻿using AuthService.Application.Contract.Auth;
-using Microsoft.AspNetCore.Mvc;
+using Grpc.Core;
 
 namespace AuthService.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AuthController(IAuthService _authService) //: Auth.AuthBase
+    public class GRPCAuthService(IAuthService _authService) //: Auth.AuthBase
     {
-
-
-        //public override Task<TokenResponse> GenerateToken(TokenRequest request, ServerCallContext context)
+        //public override Task<GrpcTokenResponse> GenerateToken(GrpcTokenRequest request, ServerCallContext context)
         //{
         //    var token = _authService.Authenticate(request);
-        //    return Task.FromResult(new TokenResponse { AccessToken = token });
+        //    return Task.FromResult(new GrpcTokenResponse { AccessToken = token });
         //}
 
 

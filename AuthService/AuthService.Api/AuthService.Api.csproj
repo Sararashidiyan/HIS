@@ -19,13 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\CommonServices\Company.Security.Jwt\Company.Security.Jwt.csproj" />
+    <ProjectReference Include="..\..\CommonServices\Company.SharedKernel\Company.SharedKernel.csproj" />
     <ProjectReference Include="..\AuthService.Application.Contract\AuthService.Application.Contract.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Protos\" />
-  </ItemGroup>
-	<ItemGroup>
-		<Protobuf Include="Protos\auth.proto" GrpcServices="Server" />
-	</ItemGroup>
 </Project>
