@@ -7,7 +7,7 @@ using AuthService.Domain.Roles;
 
 namespace AuthService.Application
 {
-    public class RoleService(IRoleRepository _repository,IRoleDomainService _domainService) : IRoleService
+    public class RoleService(IRoleQueryRepository _queryRepository, IRoleCommandRepository _commandRepository, IRoleDomainService _domainService) : IRoleService
     {
         private async Task CheckIfRoleHasPermission(int id)
         {
@@ -27,7 +27,7 @@ namespace AuthService.Application
 
         public async Task Activate(int id)
         {
-           var selectedRole=await _repository.GetByIdAsync(id);
+           var selectedRole=await _queryRepository.GetByIdAsync(id);
             GuardAgainstNullVale(selectedRole);
             selectedRole.Activate();
         }
@@ -36,13 +36,13 @@ namespace AuthService.Application
         {
            await CheckIfRoleTitleIsDuplicate(command.Title);
             var roleToBeCreate=new Role(command.Title);
-            await _repository.CreateAsync(roleToBeCreate);
+            await _commandRepository.CreateAsync(roleToBeCreate);
         }
 
       
         public async Task Deactivate(int id)
         {
-            var selectedRole = await _repository.GetByIdAsync(id);
+            var selectedRole = await _queryRepository.GetByIdAsync(id);
             GuardAgainstNullVale(selectedRole);
             selectedRole.Deactivate();
         }
@@ -50,19 +50,19 @@ namespace AuthService.Application
         public async Task Delete(int id)
         {
             await CheckIfRoleHasPermission(id);
-            var selectedRole = await _repository.GetByIdAsync(id);
+            var selectedRole = await _queryRepository.GetByIdAsync(id);
             GuardAgainstNullVale(selectedRole);
-            await _repository.DeleteAsync(selectedRole);
+            await _commandRepository.DeleteAsync(selectedRole);
         }
         public async Task<List<RoleDto>> GetAll()
         {
-            var roles = await _repository.GetAllAsync();
+            var roles = await _queryRepository.GetAllAsync();
             return RoleMappers.Map(roles);
         }
 
         public async Task<RoleDto> GetById(int id)
         {
-            var selectedRole = await _repository.GetByIdAsync(id);
+            var selectedRole = await _queryRepository.GetByIdAsync(id);
             GuardAgainstNullVale(selectedRole);
             return RoleMappers.Map(selectedRole);
         }
@@ -70,7 +70,7 @@ namespace AuthService.Application
         {
             await CheckIfRoleTitleIsDuplicate(command.Title,command.Id);
             await CheckIfRoleHasPermission(command.Id);
-            var selectedRole = await _repository.GetByIdAsync(command.Id);
+            var selectedRole = await _queryRepository.GetByIdAsync(command.Id);
             GuardAgainstNullVale(selectedRole);
             selectedRole.Update(command.Title);
         }

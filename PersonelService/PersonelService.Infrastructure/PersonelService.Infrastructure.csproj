@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonServices\Company.SharedKernel\Company.SharedKernel.csproj" />
+    <ProjectReference Include="..\PersonelService.Domain\PersonelService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

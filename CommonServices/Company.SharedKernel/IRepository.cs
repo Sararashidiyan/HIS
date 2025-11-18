@@ -1,10 +1,15 @@
 ﻿namespace Company.SharedKernel
 {
-    public interface IRepository<TKey,T> where T : class
+    public interface ICommandRepository<TKey,T> where T : class
     {
-        Task<T> GetByIdAsync(TKey id);
         Task DeleteAsync(T item);
         Task CreateAsync(T item);
+        Task ModifyAsync(T item);
+    }
+
+    public interface IQueryRepository<TKey, T> where T : class
+    {
+        Task<T> GetByIdAsync(TKey id);
         Task<List<T>> GetAllAsync();
     }
 }

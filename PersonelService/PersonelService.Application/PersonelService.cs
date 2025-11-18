@@ -1,6 +1,6 @@
 ﻿namespace PersonelService.Application
 {
-    public class Class1
+    public class PersonelService//: IPersonelService
     {
 
     }
