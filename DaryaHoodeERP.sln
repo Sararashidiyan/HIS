@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthService", "AuthService", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -36,6 +36,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelService.Application", "PersonelService\PersonelService.Application\PersonelService.Application.csproj", "{A07E81A9-5CC5-4C84-9277-2675F84A67AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelService.Application.Contract", "PersonelService\PersonelService.Application.Contract\PersonelService.Application.Contract.csproj", "{36B0DA97-47C8-414E-B4C8-AE174342149D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D58B18F-9FDC-487F-B59B-3F150843E062}"
+	ProjectSection(SolutionItems) = preProject
+		all-publish.cmd = all-publish.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F950A1F1-5998-4F2E-8C3F-D0AC219A29D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp", "Test\MyApp\MyApp.csproj", "{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +108,10 @@ Global
 		{36B0DA97-47C8-414E-B4C8-AE174342149D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B0DA97-47C8-414E-B4C8-AE174342149D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B0DA97-47C8-414E-B4C8-AE174342149D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +131,7 @@ Global
 		{311D77F9-E9E7-495B-8018-E00750107BF3} = {7D383951-026E-4999-9C7E-DB9A5D461BCC}
 		{A07E81A9-5CC5-4C84-9277-2675F84A67AF} = {7D383951-026E-4999-9C7E-DB9A5D461BCC}
 		{36B0DA97-47C8-414E-B4C8-AE174342149D} = {7D383951-026E-4999-9C7E-DB9A5D461BCC}
+		{A39ECC19-88A9-4786-A0D9-25E1F5CC4BEF} = {F950A1F1-5998-4F2E-8C3F-D0AC219A29D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BED9935-E4A6-4437-A3CA-17166B120099}
