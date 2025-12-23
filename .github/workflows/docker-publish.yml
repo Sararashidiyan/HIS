@@ -25,7 +25,8 @@ jobs:
       # 3. Build Docker image
       - name: Build image
         run: |
-          docker build -t ghcr.io/sararashidiyan/myapp:latest .
+          docker build -t ghcr.io/sararashidiyan/myapp:latest \
+          -f test/MyApp/Dockerfile test/MyApp
 
       # 4. Push Docker image
       - name: Push image
