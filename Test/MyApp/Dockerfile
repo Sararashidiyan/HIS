@@ -9,7 +9,7 @@ COPY Test/MyApp/*.csproj ./
 RUN dotnet restore
 
 # Copy the rest of the project files
-COPY Test/MyApp/*.csproj ./
+COPY Test/MyApp/. ./
 
 # Build the project
 RUN dotnet publish -c Release -o /app/publish
