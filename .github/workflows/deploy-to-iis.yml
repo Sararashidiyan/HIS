@@ -36,7 +36,7 @@ jobs:
 
     - name: Deploy to IIS via WebDeploy
       run: |
-        C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe -verb:sync -source:contentPath="./publish" `
+        msdeploy.exe -verb:sync -source:contentPath="./publish" `
         -dest:auto,computerName="http://46.245.69.106:9010/msdeploy.axd?site=Test",userName="$env:DEPLOY_USER",password="$env:DEPLOY_PASS",authType="Basic" `
         -allowUntrusted
       env:
