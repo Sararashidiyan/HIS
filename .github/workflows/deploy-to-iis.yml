@@ -30,6 +30,10 @@ jobs:
     - name: Publish
       run: dotnet publish ./Test/MyApp/MyApp.csproj -c Release -o ./publish
 
+    - name: Install WebDeploy 
+      run: | 
+        choco install webdeploy --yes
+
     - name: Deploy to IIS via WebDeploy
       run: |
         msdeploy.exe -verb:sync -source:contentPath="./publish" `
