@@ -19,16 +19,16 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./Test/MyApp/MyApp.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build ./Test/MyApp/MyApp.csproj --configuration Release --no-restore
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet ./Test/MyApp/MyApp.csproj --no-build --verbosity normal
 
     - name: Publish
-      run: dotnet publish -c Release -o ./publish
+      run: dotnet publish ./Test/MyApp/MyApp.csproj -c Release -o ./publish
 
     - name: Deploy to IIS via WebDeploy
       run: |
